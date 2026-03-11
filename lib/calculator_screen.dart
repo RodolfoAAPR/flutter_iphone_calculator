@@ -10,6 +10,23 @@ class CalculatorScreen extends StatefulWidget {
 class CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Column(children: [Text("123456789")]));
+    return Container(
+      color: Colors.black,
+      child: Column(
+        children: [
+          Expanded(
+            flex: 4,
+            child: Text(
+              "123456789", 
+            style: TextStyle(fontSize: 70,
+             decoration: TextDecoration.none,
+              color: Colors.white)),
+          ),
+          Expanded(
+            flex: 6,
+            child: Placeholder())
+        ],
+      )
+    );
   }
 }
