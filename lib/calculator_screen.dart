@@ -43,7 +43,7 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                         getButton("AC"),
                         getButton("()"),
                         getButton("%"),
-                        getButton("/"),
+                        getOperationButton("/"),
                       ],
                     ),
                   ),
@@ -54,7 +54,7 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                         getButton("7"),
                         getButton("8"),
                         getButton("9"),
-                        getButton("/"),
+                        getOperationButton("/"),
                       ],
                     ),
                   ),
@@ -65,7 +65,7 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                         getButton("AC"),
                         getButton("()"),
                         getButton("%"),
-                        getButton("/"),
+                        getOperationButton("/"),
                       ],
                     ),
                   ),
@@ -76,7 +76,7 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                         getButton("AC"),
                         getButton("()"),
                         getButton("%"),
-                        getButton("/"),
+                        getOperationButton("/"),
                       ],
                     ),
                   ),
@@ -87,7 +87,7 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                         getButton("AC"),
                         getButton("()"),
                         getButton("%"),
-                        getButton("/"),
+                        getOperationButton("/"),
                       ],
                     ),
                   ),
@@ -100,10 +100,19 @@ class CalculatorScreenState extends State<CalculatorScreen> {
     );
   }
 
-  Widget getButton(String text) {
+  Widget getButton(String text, {Color color = Colors.white}) {
     return Expanded(
       flex: 1,
-      child: FloatingActionButton(onPressed: () {}, child: Text(text)),
+      child: FloatingActionButton(
+        backgroundColor: color,
+        onPressed: () {},
+        child: Text(text),
+        shape: CircleBorder(),
+      ),
     );
+  }
+
+  Widget getOperationButton(String text) {
+    return getButton(text, color: Colors.deepOrange);
   }
 }
